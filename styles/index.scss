@@ -301,3 +301,10 @@ $card-gap: 6px;
         line-height: normal;
     }
 }
+
+.share.pc{
+    .card-content{
+        padding: 32px 33px;
+        background: linear-gradient(117deg, rgba(236, 241, 176, 0.25) -2.19%, #C3C1C2 46.9%, rgba(93, 36, 150, 0.00) 96.9%);
+    }
+}
