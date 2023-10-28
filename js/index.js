@@ -11,18 +11,27 @@ $(function () {
 })
 
 function setSameHeight(doms) {
-    let maxHeight = 0;
-
     doms.forEach(element => {
-        const elementHeight = element.clientHeight;
-        if (elementHeight > maxHeight) {
-            maxHeight = elementHeight;
-        }
+        element.style.height = 'auto';
     });
 
-    doms.forEach(element => {
-        element.style.height = `${maxHeight}px`;
-    });
+    setTimeout(() => {
+        // 初始化變數以存儲最大高度
+        let maxHeight = 0;
+
+        // 計算最大高度
+        doms.forEach(element => {
+            const elementHeight = element.clientHeight;
+            if (elementHeight > maxHeight) {
+                maxHeight = elementHeight;
+            }
+        });
+
+        // 將所有元素設為相同的最大高度
+        doms.forEach(element => {
+            element.style.height = `${maxHeight}px`;
+        });
+    }, 0);
 }
 
 // GPT寫法

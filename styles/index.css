@@ -9,6 +9,10 @@ video {
   max-width: 100%;
 }
 
+strong {
+  font-weight: bold;
+}
+
 main {
   padding: 55px;
   background-color: #253036;
@@ -289,7 +293,99 @@ header .nav-toggle span {
   line-height: normal;
 }
 
+.fun-title {
+  width: 250px;
+  margin-left: auto;
+}
+
 .share.pc .card-content {
+  position: relative;
   padding: 32px 33px;
-  background: linear-gradient(117deg, rgba(236, 241, 176, 0.25) -2.19%, #C3C1C2 46.9%, rgba(93, 36, 150, 0) 96.9%);
+  background: linear-gradient(117deg, rgb(236, 241, 176) -2.19%, #C3C1C2 46.9%, rgb(93, 36, 150) 96.9%);
+}
+.share.pc .card-content .fun-title {
+  position: absolute;
+  top: 0;
+  right: 18px;
+}
+.share.pc .share-content {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  padding-bottom: 3%;
+}
+.share.pc .share-content .share-text-content.align-center {
+  align-self: center;
+}
+.share.pc .share-content .share-text-content.align-bottom {
+  align-self: flex-end;
+}
+.share.pc .share-content h2 {
+  color: #FFF;
+  font-family: Inter;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-align: center;
+  padding-bottom: 16px;
+  margin-bottom: 25px;
+  border-bottom: 3px solid #FFED4C;
+}
+.share.pc .share-content p {
+  color: #FFF;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 1em;
+}
+.share.pc .share-content .reddot-winner {
+  width: 140px;
+}
+.share.pc .share-content .share-image-content .award-fidelio > div {
+  display: flex;
+  align-items: center;
+}
+.share.pc .share-content .share-image-content .award-fidelio > div .hi-res {
+  width: 60px;
+}
+.share.pc .share-content .share-image-content .award-tat1235 > div {
+  position: relative;
+  top: -50px;
+  margin-left: auto;
+}
+.share.pc .share-content .share-image-content .award-fidelio > div, .share.pc .share-content .share-image-content .award-tat1235 > div {
+  width: 76%;
+}
+.share.pc .activity-description {
+  background-color: #CAD2FF;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.25) inset;
+  padding: 23px 15px 45px;
+}
+.share.pc .activity-description h2 {
+  color: #353535;
+  text-align: center;
+  font-family: Inter;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 0.88em;
+}
+.share.pc .activity-description p {
+  color: #353535;
+  text-align: center;
+  font-family: Inter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.product-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, auto);
 }
