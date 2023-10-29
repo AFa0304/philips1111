@@ -268,7 +268,8 @@ main .card {
         background-color: transparent;
     }
 
-    &.fun {
+    &.fun,
+    &.video {
         background-color: transparent;
     }
 }
@@ -302,8 +303,6 @@ main .card {
         animation: sloganShadow 5s linear 0s infinite;
     }
 }
-
-
 
 @keyframes sloganShadow {
     0% {
@@ -485,7 +484,7 @@ $card-gap: 6px;
                     height: 420px;
                     display: flex;
                     align-items: center;
-                    img{
+                    img {
                         width: 100%;
                         height: 100%;
                         object-fit: contain;
@@ -580,6 +579,7 @@ $card-gap: 6px;
 
     .share-content {
         display: flex;
+        justify-content: center;
         align-items: stretch;
         gap: 10px;
         padding-bottom: 3%;
@@ -604,7 +604,7 @@ $card-gap: 6px;
             text-align: center;
             padding-bottom: 16px;
             margin-bottom: 25px;
-            border-bottom: 3px solid #ffed4c;
+            border-bottom: 3px solid $main-color;
         }
 
         p {
@@ -768,18 +768,18 @@ $card-gap: 6px;
             gap: 27px;
         }
     }
-    
-    .swiper-wrapper{
+
+    .swiper-wrapper {
         align-items: center;
     }
 
     .swiper-slide {
         text-align: center;
         box-sizing: border-box;
-        &.tv-padding{
+        &.tv-padding {
             padding: 50px 80px;
         }
-        .slide-image-wrapper{
+        .slide-image-wrapper {
             max-width: 90%;
             margin: 0 auto;
         }
@@ -909,6 +909,113 @@ $card-gap: 6px;
             }
         }
     }
+
+    .video-footer {
+        min-height: 270px;
+        display: flex;
+        .vf-wrapper {
+            display: flex;
+            position: relative;
+            .vf-bg {
+                position: relative;
+                z-index: 1;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center center;
+                }
+            }
+            .vf-filter {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 2;
+                background: linear-gradient(180deg, #56de34 0%, #51b5fe 100%);
+                mix-blend-mode: multiply;
+            }
+            .vf-content {
+                width: calc(50% + 55px);
+                height: 80%;
+                display: flex;
+                position: absolute;
+                align-items: stretch;
+                gap: 49px;
+                top: 50%;
+                right: -55px;
+                background-color: rgba($main-color, 0.85);
+                z-index: 3;
+                border-top-left-radius: 999px;
+                border-bottom-left-radius: 999px;
+                @include translate(0, -50%);
+                padding: 30px 10px;
+                box-sizing: border-box;
+                .vf-name {
+                    width: 112px;
+                    height: 112px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    align-self: center;
+                    border-radius: 100%;
+                    background-color: #d9d9d9;
+                    margin-left: 46px;
+                    flex-shrink: 0;
+                    h1 {
+                        color: $main-dark;
+                        text-align: center;
+                        font-family: Inter;
+                        font-size: 36px;
+                        font-weight: 600;
+                    }
+                }
+                .vf-description {
+                    display: flex;
+                    justify-content: space-around;
+                    flex-flow: column;
+                    .vf-stars {
+                        display: flex;
+                        gap: 5px;
+                        margin-bottom: 30px;
+                    }
+                    h1 {
+                        color: $main-dark;
+                        font-family: Inter;
+                        font-size: 24px;
+                        font-weight: 600;
+                        margin-bottom: 15px;
+                    }
+                    h2 {
+                        color: $main-dark;
+                        font-family: Inter;
+                        font-size: 22px;
+                        font-weight: 400;
+                    }
+                    .read-more {
+                        display: flex;
+                        justify-content: flex-end;
+                        align-items: flex-end;
+                        margin-top: 30px;
+                        a {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 999px;
+                            border: 1px solid #000;
+                            text-decoration: none;
+                            color: #000;
+                            font-family: Inter;
+                            font-size: 15px;
+                            font-weight: 400;
+                            padding: 2.5px 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 .card.introduction {
@@ -1026,6 +1133,12 @@ $card-gap: 6px;
 .mobile {
     display: none !important;
 }
+@media screen and (max-width: 2560px) {
+    main .card{
+        max-width: 1820px;
+        margin: 0 auto;
+    }
+}
 
 @media screen and (max-width: 1024px) {
     .pc {
@@ -1034,7 +1147,7 @@ $card-gap: 6px;
     .mobile {
         display: inherit !important;
     }
-    .kv-logo{
+    .kv-logo {
         width: 36%;
         max-width: 200px;
     }
@@ -1137,52 +1250,52 @@ $card-gap: 6px;
         margin: 0 auto;
     }
 
-    .card.share{
-        .card-content{
+    .card.share {
+        .card-content {
             padding: 0 0 10px;
-            .fun-title{
+            .fun-title {
                 position: initial;
             }
         }
     }
     .share {
-        .share-content{
+        .share-content {
             flex-flow: column;
             gap: 20px;
-            .pl{
+            .pl {
                 padding-left: 15px;
             }
-            .pr{
+            .pr {
                 padding-right: 15px;
             }
-            .text-left{
+            .text-left {
                 text-align: left;
             }
-            .text-right{
+            .text-right {
                 text-align: right;
             }
-            h2{
+            h2 {
                 font-size: 20px;
                 padding-bottom: 7px;
                 margin-bottom: 13px;
             }
-            p{
+            p {
                 font-size: 14px;
             }
-            .share-row{
+            .share-row {
                 display: flex;
                 align-items: center;
-                .share-image-content{
+                .share-image-content {
                     max-width: 300px;
-                    .award-tat1235 > div{
+                    .award-tat1235 > div {
                         width: 100%;
                         top: 0;
                         left: -30px;
                     }
                 }
-                .share-text-content{
+                .share-text-content {
                     flex-grow: 1;
-                    &.right{
+                    &.right {
                         display: flex;
                         flex-flow: column;
                         align-items: flex-end;
@@ -1190,57 +1303,57 @@ $card-gap: 6px;
                 }
             }
         }
-        .activity-description{
+        .activity-description {
             width: calc(100% - 20px);
             margin: 0 auto;
             box-sizing: border-box;
             padding: 30px 15px;
-            h2{
+            h2 {
                 font-size: 20px;
             }
-            p{
+            p {
                 font-size: 14px;
             }
         }
     }
-    .product-wrapper{
+    .product-wrapper {
         grid-template-columns: 1fr;
         grid-template-rows: repeat(5, auto);
-        .product-switch{
+        .product-switch {
             grid-column: initial;
             grid-row-start: 1;
         }
-        .product-title{
+        .product-title {
             grid-row-start: 2;
             margin: 20px 0 0;
-            h3{
+            h3 {
                 font-size: 15px;
             }
-            h1{
+            h1 {
                 font-size: 20px;
-                span{
+                span {
                     font-size: 20px;
                 }
-                sub{
+                sub {
                     font-size: 15px;
                 }
             }
         }
-        .product-images{
+        .product-images {
             grid-row-start: 3;
             grid-row-end: initial;
             padding: 20px 0;
         }
-        .product-description{
-            h4{
+        .product-description {
+            h4 {
                 font-size: 16px;
                 margin-bottom: 5px;
             }
-            p{
+            p {
                 font-size: 14px;
             }
         }
-        .product-links h5{
+        .product-links h5 {
             display: inline-block;
             padding: 3px 8px;
             border-radius: 90px;
@@ -1257,34 +1370,34 @@ $card-gap: 6px;
         overflow-x: auto;
         padding: 0 9px;
         box-sizing: border-box;
-        ul{
+        ul {
             gap: 15px;
-            a{
+            a {
                 font-size: 15px;
                 white-space: nowrap;
                 text-shadow: 1px 1px 5px $main-dark;
             }
         }
     }
-    .card.introduction .card-content{
+    .card.introduction .card-content {
         .intr-nav {
             min-width: 115px;
-            ul li{
+            ul li {
                 min-width: 110px;
-                a{
+                a {
                     font-size: 16px;
                 }
-                &.active a{
+                &.active a {
                     font-size: 20px;
                 }
             }
         }
-        .intr-content-wrapper .intr-content{
+        .intr-content-wrapper .intr-content {
             padding: 0;
             background-color: transparent;
             .intr-inner {
                 font-size: 20px;
-                h1{
+                h1 {
                     font-size: 20px;
                 }
             }
