@@ -1,4 +1,5 @@
 $(function () {
+    AOS.init();
     // const sameHeight1_list = document.querySelectorAll(".same-height1");
     const sameHeight2_list = document.querySelectorAll(".same-height2");
     // setSameHeight(sameHeight1_list);
@@ -87,6 +88,7 @@ $(function () {
         console.log("scroll");
         if (!isScrolling) {
             $("header").addClass("hide");
+            $(".nav-toggle").removeClass("active")
         }
         clearTimeout(scrollTimer);
 
@@ -104,8 +106,14 @@ $(function () {
             const obj = sectionNav_elements[i];
             const elementRect = obj.dom.getBoundingClientRect();
             if (elementRect.top <= 0) {
-                console.log("超出", obj.section);
-                const currentNavItem = $(`.nav-content li[data-id=${obj.section}]`);
+                let currentNavItem = undefined
+                console.log("超出" + obj.section, currentNavItem)
+                if (obj.section === "introduction") {
+                    const currentIntrIndex = $(".intr-nav li.active a")[0].getAttribute("data-index")
+                    currentNavItem = $(`.nav-content li[data-id=introduction${currentIntrIndex}]`);
+                } else {
+                    currentNavItem = $(`.nav-content li[data-id=${obj.section}]`);
+                }
                 currentNavItem.addClass("active").siblings("li").removeClass("active");
                 break;
             }
