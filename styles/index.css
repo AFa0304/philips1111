@@ -402,6 +402,29 @@ main .card.fun, main .card.video {
   -ms-transform: scale(1.04);
   -o-transform: scale(1.04);
 }
+@keyframes cardHover {
+  0% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+  }
+  75% {
+    transform: scale(1.07);
+    -webkit-transform: scale(1.07);
+    -moz-transform: scale(1.07);
+    -ms-transform: scale(1.07);
+    -o-transform: scale(1.07);
+  }
+  100% {
+    transform: scale(1.04);
+    -webkit-transform: scale(1.04);
+    -moz-transform: scale(1.04);
+    -ms-transform: scale(1.04);
+    -o-transform: scale(1.04);
+  }
+}
 .fun .card-content .left-card {
   width: 66.37%;
   flex-shrink: 0;
@@ -607,7 +630,7 @@ main .card.fun, main .card.video {
 }
 .share .share-content .share-image-content .award-tat1235 > div {
   position: relative;
-  top: -50px;
+  top: -25px;
   margin-left: auto;
 }
 .share .share-content .share-image-content .award-fidelio > div,
@@ -773,11 +796,11 @@ main .card.fun, main .card.video {
   left: 50%;
   z-index: 2;
   animation: tvShadow 2s ease-in-out 0s infinite alternate;
-  transform: translate(-50%, -50%) scale(1.15) rotateZ(0);
-  -webkit-transform: translate(-50%, -50%) scale(1.15) rotateZ(0);
-  -moz-transform: translate(-50%, -50%) scale(1.15) rotateZ(0);
-  -ms-transform: translate(-50%, -50%) scale(1.15) rotateZ(0);
-  -o-transform: translate(-50%, -50%) scale(1.15) rotateZ(0);
+  transform: translate(-50%, -50%) scale(1.14) rotateZ(0);
+  -webkit-transform: translate(-50%, -50%) scale(1.14) rotateZ(0);
+  -moz-transform: translate(-50%, -50%) scale(1.14) rotateZ(0);
+  -ms-transform: translate(-50%, -50%) scale(1.14) rotateZ(0);
+  -o-transform: translate(-50%, -50%) scale(1.14) rotateZ(0);
 }
 
 @keyframes tvShadow {
@@ -1250,6 +1273,7 @@ main .card.fun, main .card.video {
     text-align: right;
   }
   .share .share-content h2 {
+    width: 95%;
     font-size: 20px;
     padding-bottom: 7px;
     margin-bottom: 13px;
@@ -1270,7 +1294,9 @@ main .card.fun, main .card.video {
     left: -30px;
   }
   .share .share-content .share-row .share-text-content {
+    width: 60%;
     flex-grow: 1;
+    flex-shrink: 0;
   }
   .share .share-content .share-row .share-text-content.right {
     display: flex;

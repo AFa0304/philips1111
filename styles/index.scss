@@ -422,6 +422,7 @@ $card-gap: 6px;
         position: relative;
         z-index: 7;
         @include transitionAll(0.3);
+        // transition-delay: 0.2s;
     }
 
     .left-card,
@@ -429,7 +430,20 @@ $card-gap: 6px;
         &:hover {
             .card-container {
                 @include scale(1.04);
+                // animation: cardHover 0.3s ease 0s alternate forwards;
             }
+        }
+    }
+
+    @keyframes cardHover {
+        0%{
+            @include scale(1);
+        }
+        75%{
+            @include scale(1.07);
+        }
+        100%{
+            @include scale(1.04);
         }
     }
 
@@ -677,7 +691,7 @@ $card-gap: 6px;
             .award-tat1235 {
                 >div {
                     position: relative;
-                    top: -50px;
+                    top: -25px;
                     margin-left: auto;
                 }
             }
@@ -879,7 +893,7 @@ $card-gap: 6px;
             left: 50%;
             z-index: 2;
             animation: tvShadow 2s ease-in-out 0s infinite alternate;
-            @include translateScaleRotate(-50%, -50%, 1.15, 0);
+            @include translateScaleRotate(-50%, -50%, 1.14, 0);
         }
     }
 }
@@ -1398,6 +1412,7 @@ $card-gap: 6px;
             }
 
             h2 {
+                width: 95%;
                 font-size: 20px;
                 padding-bottom: 7px;
                 margin-bottom: 13px;
@@ -1422,7 +1437,9 @@ $card-gap: 6px;
                 }
 
                 .share-text-content {
+                    width: 60%;
                     flex-grow: 1;
+                    flex-shrink: 0;
 
                     &.right {
                         display: flex;
