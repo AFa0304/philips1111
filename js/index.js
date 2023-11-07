@@ -43,7 +43,6 @@ $(function () {
 
         const targetPosition = window.scrollY + offsetTop + 2;
         $(".nav-toggle").removeClass("active");
-        // 使用 window.scrollTo() 来进行平滑滚动
         window.scrollTo({
             top: targetPosition,
             behavior: "smooth",
@@ -85,7 +84,6 @@ $(function () {
     let scrollTimer;
     let isScrolling = false;
     window.addEventListener("scroll", () => {
-        console.log("scroll");
         if (!isScrolling) {
             $("header").addClass("hide");
             $(".nav-toggle").removeClass("active")
