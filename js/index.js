@@ -43,7 +43,6 @@ $(function () {
 
         const targetPosition = window.scrollY + offsetTop + 2;
         $(".nav-toggle").removeClass("active");
-        // 使用 window.scrollTo() 来进行平滑滚动
         window.scrollTo({
             top: targetPosition,
             behavior: "smooth",
@@ -84,7 +83,10 @@ $(function () {
     let scrollTimer;
     let isScrolling = false;
     window.addEventListener("scroll", () => {
+<<<<<<< HEAD
         // console.log("scroll");
+=======
+>>>>>>> a802886e80ff968455c64591974ccd00b7f8287f
         if (!isScrolling) {
             $("header").addClass("hide");
             $(".nav-toggle").removeClass("active")
@@ -106,7 +108,11 @@ $(function () {
             const elementRect = obj.dom.getBoundingClientRect();
             if (elementRect.top <= 0) {
                 let currentNavItem = undefined
+<<<<<<< HEAD
                 // console.log("超出" + obj.section, currentNavItem)
+=======
+                console.log("超出" + obj.section, currentNavItem)
+>>>>>>> a802886e80ff968455c64591974ccd00b7f8287f
                 if (obj.section === "introduction") {
                     const currentIntrIndex = $(".intr-nav li.active a")[0].getAttribute("data-index")
                     currentNavItem = $(`.nav-content li[data-id=introduction${currentIntrIndex}]`);

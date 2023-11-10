@@ -404,10 +404,13 @@ main .card.fun, main .card.video {
   -ms-transition: all 0.3s;
   -o-transition: all 0.3s;
 }
+<<<<<<< HEAD
 .fun .card-content .left-card,
 .fun .card-content .right-card {
   overflow: hidden;
 }
+=======
+>>>>>>> a802886e80ff968455c64591974ccd00b7f8287f
 .fun .card-content .left-card:hover .card-container,
 .fun .card-content .right-card:hover .card-container {
   transform: scale(1.04);
@@ -618,7 +621,11 @@ main .card.fun, main .card.video {
   padding-bottom: 16px;
   margin-bottom: 25px;
   border-bottom: 3px solid #ffed4c;
+<<<<<<< HEAD
   text-shadow: 3px 3px 3px #a6a6a4;
+=======
+  text-shadow: 3px 3px 3px #A6A6A4;
+>>>>>>> a802886e80ff968455c64591974ccd00b7f8287f
 }
 .share .share-content p {
   color: #fff;
@@ -628,12 +635,19 @@ main .card.fun, main .card.video {
   font-weight: 500;
   line-height: normal;
   margin-bottom: 1em;
+<<<<<<< HEAD
   text-shadow: 3px 3px 3px #a6a6a4;
+=======
+  text-shadow: 3px 3px 3px #A6A6A4;
+>>>>>>> a802886e80ff968455c64591974ccd00b7f8287f
 }
 .share .share-content .winners {
   display: flex;
   gap: 10px;
+<<<<<<< HEAD
   margin-bottom: 10px;
+=======
+>>>>>>> a802886e80ff968455c64591974ccd00b7f8287f
 }
 .share .share-content .reddot-winner {
   width: 140px;
@@ -856,6 +870,7 @@ main .card.fun, main .card.video {
     -o-transform: translate(-50%, -50%) scale(1.2) rotateZ(8deg);
   }
 }
+<<<<<<< HEAD
 .card.shops {
   background-color: rgb(255, 237, 76);
 }
@@ -942,6 +957,11 @@ main .card.fun, main .card.video {
   max-width: 220px;
 }
 
+=======
+.card.video {
+  display: none;
+}
+>>>>>>> a802886e80ff968455c64591974ccd00b7f8287f
 .card.video .card-header {
   height: 90px;
 }
@@ -1644,6 +1664,7 @@ main .card.fun, main .card.video {
     font-size: 18px;
   }
   .card.video .video-footer {
+<<<<<<< HEAD
     width: 100%;
     min-height: 0;
     position: relative;
@@ -1655,6 +1676,9 @@ main .card.fun, main .card.video {
     position: absolute;
     top: 0;
     left: 0;
+=======
+    min-height: 160px;
+>>>>>>> a802886e80ff968455c64591974ccd00b7f8287f
   }
   .card.video .video-footer .vf-wrapper .vf-content {
     width: 90.5%;
@@ -1717,6 +1741,7 @@ main .card.fun, main .card.video {
   .qr-codes .qr-code span {
     font-size: 16px;
   }
+<<<<<<< HEAD
   .card.shops .card-header {
     height: auto;
     padding: 20px;
@@ -1779,5 +1804,11 @@ main .card.fun, main .card.video {
   }
   .card.shops .card-content .shop-list li#cc {
     max-width: 120px;
+=======
+}
+@media screen and (max-width: 768px) {
+  .card-header h1 {
+    font-size: 30px;
+>>>>>>> a802886e80ff968455c64591974ccd00b7f8287f
   }
 }

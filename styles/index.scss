@@ -128,7 +128,11 @@ header {
                 }
             }
 
+<<<<<<< HEAD
             + .nav-content {
+=======
+            +.nav-content {
+>>>>>>> a802886e80ff968455c64591974ccd00b7f8287f
                 opacity: 1;
                 right: 0;
                 box-shadow: -5px 5px 10px rgba($main-dark, 0.5);
@@ -233,7 +237,11 @@ header {
             justify-content: center;
             align-items: center;
             margin-top: 30px;
+<<<<<<< HEAD
             a {
+=======
+            a{
+>>>>>>> a802886e80ff968455c64591974ccd00b7f8287f
                 text-decoration: none;
             }
 
@@ -252,12 +260,20 @@ header {
 }
 
 footer {
+<<<<<<< HEAD
     .footer-copyright {
+=======
+    .footer-copyright{
+>>>>>>> a802886e80ff968455c64591974ccd00b7f8287f
         display: flex;
         justify-content: center;
         align-items: center;
         padding: 15px 20px;
+<<<<<<< HEAD
         span {
+=======
+        span{
+>>>>>>> a802886e80ff968455c64591974ccd00b7f8287f
             font-weight: bold;
         }
     }
@@ -428,7 +444,10 @@ $card-gap: 6px;
 
     .left-card,
     .right-card {
+<<<<<<< HEAD
         overflow: hidden;
+=======
+>>>>>>> a802886e80ff968455c64591974ccd00b7f8287f
         &:hover {
             .card-container {
                 @include scale(1.04);
@@ -635,6 +654,10 @@ $card-gap: 6px;
         // background: linear-gradient(117deg, rgba(236, 241, 176, 1) -2.19%, #c3c1c2 46.9%, rgb(93, 36, 150) 96.9%);
         background: linear-gradient(117deg, rgb(187 193 116) -2.19%, #c3c1c2 46.9%, rgb(93, 36, 150) 96.9%);
         // background: linear-gradient(117deg, rgba(236, 241, 176, 0.25) -2.19%, #C3C1C2 46.9%, rgba(93, 36, 150, 0.00) 96.9%);
+<<<<<<< HEAD
+=======
+
+>>>>>>> a802886e80ff968455c64591974ccd00b7f8287f
 
         .fun-title {
             position: absolute;
@@ -672,7 +695,11 @@ $card-gap: 6px;
             padding-bottom: 16px;
             margin-bottom: 25px;
             border-bottom: 3px solid $main-color;
+<<<<<<< HEAD
             text-shadow: 3px 3px 3px #a6a6a4;
+=======
+            text-shadow: 3px 3px 3px #A6A6A4;
+>>>>>>> a802886e80ff968455c64591974ccd00b7f8287f
         }
 
         p {
@@ -683,6 +710,7 @@ $card-gap: 6px;
             font-weight: 500;
             line-height: normal;
             margin-bottom: 1em;
+<<<<<<< HEAD
             text-shadow: 3px 3px 3px #a6a6a4;
         }
 
@@ -690,13 +718,25 @@ $card-gap: 6px;
             display: flex;
             gap: 10px;
             margin-bottom: 10px;
+=======
+            text-shadow: 3px 3px 3px #A6A6A4;
+        }
+
+        .winners{
+            display: flex;
+            gap: 10px;
+>>>>>>> a802886e80ff968455c64591974ccd00b7f8287f
         }
 
         .reddot-winner {
             width: 140px;
             margin-bottom: 3px;
         }
+<<<<<<< HEAD
         .hi-res-winner {
+=======
+        .hi-res-winner{
+>>>>>>> a802886e80ff968455c64591974ccd00b7f8287f
             width: 60px;
         }
 
@@ -706,7 +746,7 @@ $card-gap: 6px;
             justify-content: center;
 
             .award-fidelio {
-                > div {
+                >div {
                     display: flex;
                     align-items: center;
 
@@ -717,7 +757,7 @@ $card-gap: 6px;
             }
 
             .award-tat1235 {
-                > div {
+                >div {
                     position: relative;
                     top: -25px;
                     margin-left: auto;
@@ -726,7 +766,7 @@ $card-gap: 6px;
 
             .award-fidelio,
             .award-tat1235 {
-                > div {
+                >div {
                     width: 76%;
                 }
             }
@@ -1040,6 +1080,7 @@ $card-gap: 6px;
 }
 
 .card.video {
+    display: none;
     .card-header {
         height: 90px;
 
@@ -1050,7 +1091,10 @@ $card-gap: 6px;
 
             li {
                 position: relative;
+<<<<<<< HEAD
                 text-align: center;
+=======
+>>>>>>> a802886e80ff968455c64591974ccd00b7f8287f
 
                 &::after {
                     width: 0%;
@@ -1097,7 +1141,11 @@ $card-gap: 6px;
             position: relative;
             padding-bottom: 45%;
 
+<<<<<<< HEAD
             > iframe {
+=======
+            >iframe {
+>>>>>>> a802886e80ff968455c64591974ccd00b7f8287f
                 width: 100%;
                 height: 100%;
                 position: absolute;
@@ -1135,7 +1183,11 @@ $card-gap: 6px;
                 top: 0;
                 left: 0;
                 z-index: 2;
+<<<<<<< HEAD
                 background: linear-gradient(-45deg, #f36e6e, $main-color, #56de34, #51b5fe, #e046a5);
+=======
+                background: linear-gradient(-45deg, #f36e6e, $main-color , #56de34, #51b5fe, #e046a5);
+>>>>>>> a802886e80ff968455c64591974ccd00b7f8287f
                 background-size: 400% 400%;
                 animation: video-footer-filter 5s ease 0s infinite;
                 mix-blend-mode: multiply;
@@ -1334,7 +1386,11 @@ $card-gap: 6px;
                     &::-webkit-scrollbar {
                         width: 25px;
                         background-color: #f5f5f5;
+<<<<<<< HEAD
                         @media screen and (max-width: 991px) {
+=======
+                        @media screen and (max-width:991px) {
+>>>>>>> a802886e80ff968455c64591974ccd00b7f8287f
                             width: 10px;
                         }
                     }
@@ -1391,7 +1447,11 @@ $card-gap: 6px;
         justify-content: center;
         align-items: center;
         gap: 15px;
+<<<<<<< HEAD
         a {
+=======
+        a{
+>>>>>>> a802886e80ff968455c64591974ccd00b7f8287f
             display: flex;
             flex-flow: column;
             justify-content: center;
@@ -1409,31 +1469,51 @@ $card-gap: 6px;
     }
 }
 
+<<<<<<< HEAD
 .step-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 35px 30px;
     > div {
+=======
+.step-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px 30px;
+    >div{
+>>>>>>> a802886e80ff968455c64591974ccd00b7f8287f
         display: flex;
         flex-flow: column;
         justify-content: center;
         align-items: center;
         gap: 10px;
+<<<<<<< HEAD
         div {
+=======
+        div{
+>>>>>>> a802886e80ff968455c64591974ccd00b7f8287f
             display: flex;
             justify-content: center;
             align-items: center;
             flex-grow: 1;
         }
     }
+<<<<<<< HEAD
     img {
+=======
+    img{
+>>>>>>> a802886e80ff968455c64591974ccd00b7f8287f
         max-width: 300px;
     }
     .qrcode {
         display: flex;
         justify-content: center;
         align-items: center;
+<<<<<<< HEAD
         a {
+=======
+        a{
+>>>>>>> a802886e80ff968455c64591974ccd00b7f8287f
             display: flex;
             flex-flow: column;
             justify-content: center;
@@ -1443,12 +1523,20 @@ $card-gap: 6px;
             text-shadow: none;
             gap: 10px;
         }
+<<<<<<< HEAD
         img {
+=======
+        img{
+>>>>>>> a802886e80ff968455c64591974ccd00b7f8287f
             width: 250px;
             margin: 0 auto;
         }
     }
+<<<<<<< HEAD
     span {
+=======
+    span{
+>>>>>>> a802886e80ff968455c64591974ccd00b7f8287f
         display: inline-block;
         // justify-self: center;
         font-size: 30px;
@@ -1663,7 +1751,11 @@ $card-gap: 6px;
                 .share-image-content {
                     max-width: 300px;
 
+<<<<<<< HEAD
                     .award-tat1235 > div {
+=======
+                    .award-tat1235>div {
+>>>>>>> a802886e80ff968455c64591974ccd00b7f8287f
                         width: 100%;
                         top: 0;
                         left: -30px;
@@ -1768,9 +1860,13 @@ $card-gap: 6px;
 
         ul {
             gap: 15px;
+<<<<<<< HEAD
             li::after{
                 bottom: -5px;
             }
+=======
+
+>>>>>>> a802886e80ff968455c64591974ccd00b7f8287f
             a {
                 font-size: 15px;
                 white-space: nowrap;
@@ -1784,19 +1880,28 @@ $card-gap: 6px;
         max-height: none;
         .card-content {
             flex-flow: column;
+<<<<<<< HEAD
             .intr-content-wrapper {
+=======
+            .intr-content-wrapper{
+>>>>>>> a802886e80ff968455c64591974ccd00b7f8287f
                 padding: 23px 10px;
             }
             .intr-nav {
                 width: 100%;
                 min-width: 115px;
                 padding: 0;
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> a802886e80ff968455c64591974ccd00b7f8287f
                 ul {
                     width: 100%;
                     flex-flow: row;
                     li {
                         min-width: 110px;
+<<<<<<< HEAD
                         height: 50px;
 
                         a {
@@ -1806,11 +1911,22 @@ $card-gap: 6px;
                         &.active {
                             border-bottom-left-radius: 0;
                             border-top-left-radius: 0;
+=======
+        
+                        a {
+                            font-size: 16px;
+                        }
+        
+                        &.active {
+                            border-bottom-left-radius:0;
+                            border-top-left-radius:0;
+>>>>>>> a802886e80ff968455c64591974ccd00b7f8287f
                             a {
                                 font-size: 20px;
                             }
                         }
                     }
+<<<<<<< HEAD
                 }
             }
 
@@ -1853,6 +1969,20 @@ $card-gap: 6px;
     
                     h1 {
                         font-size: 24px;
+=======
+                }
+            }
+    
+            .intr-content-wrapper .intr-content {
+                padding: 0;
+                background-color: transparent;
+    
+                .intr-inner {
+                    font-size: 16px;
+    
+                    h1 {
+                        font-size: 18px;
+>>>>>>> a802886e80ff968455c64591974ccd00b7f8287f
                     }
                 }
     
@@ -1918,6 +2048,7 @@ $card-gap: 6px;
         }
     }
 
+<<<<<<< HEAD
     .card.shops {
         .card-header{
             height: auto;
@@ -1985,8 +2116,90 @@ $card-gap: 6px;
                 }
                 &#cc{
                     max-width: 120px;
+=======
+    .card.video .video-footer {
+        min-height: 160px;
+
+        .vf-wrapper .vf-content {
+            width: 90.5%;
+            right: 0;
+            gap: 10px;
+
+            .vf-name {
+                width: 80px;
+                height: 80px;
+                margin-left: 18px;
+
+                h1 {
+                    font-size: 24px;
+                }
+            }
+
+            .vf-description {
+                h1 {
+                    font-size: 16px;
+                    margin-bottom: 8px;
+                }
+
+                h2 {
+                    font-size: 13px;
+                }
+
+                .read-more {
+                    margin-top: 2px;
+
+                    a {
+                        font-size: 12px;
+                    }
+                }
+
+                .vf-stars {
+                    margin-bottom: 7px;
+
+                    li {
+                        width: 20px;
+                    }
+>>>>>>> a802886e80ff968455c64591974ccd00b7f8287f
                 }
             }
         }
+    }
+
+    .qr-codes .qr-code span{
+        font-size: 20px;
+    }
+
+    .step-list{
+        grid-template-columns: 1fr;
+        gap: 15px;
+        span:nth-child(2){
+            grid-row-start: 3;
+        }
+        span:nth-child(5){
+            grid-row-start: 5;
+        }
+        span:nth-child(6){
+            grid-row-start: 7;
+        }
+    }
+    .step-list span{
+        margin-top: 30px;
+        font-size: 20px;
+    }
+
+    .qr-codes{
+        justify-content: center;
+        .qr-code{
+            width: 150px;
+            span{
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    .card-header h1{
+        font-size: 30px;
     }
 }
