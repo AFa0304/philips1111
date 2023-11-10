@@ -1,4 +1,5 @@
 $(function () {
+    AOS.init();
     // const sameHeight1_list = document.querySelectorAll(".same-height1");
     const sameHeight2_list = document.querySelectorAll(".same-height2");
     // setSameHeight(sameHeight1_list);
@@ -66,7 +67,7 @@ $(function () {
     });
 
     // 監聽scroll以變更menu nav選項之active樣式
-    const elements = document.querySelectorAll(".nav-section"); // 用你的DOM元素的ID替换 'your-element-id'
+    const elements = document.querySelectorAll(".nav-section");
     let sectionNav_elements = [];
     elements.forEach((element) => {
         const dataIndex = parseInt(element.getAttribute("data-section-index"));
@@ -78,15 +79,15 @@ $(function () {
         });
     });
     sectionNav_elements.sort((x, y) => y.index - x.index);
-
     handleHeaderFixed();
 
     let scrollTimer;
     let isScrolling = false;
     window.addEventListener("scroll", () => {
-        console.log("scroll");
+        // console.log("scroll");
         if (!isScrolling) {
             $("header").addClass("hide");
+            $(".nav-toggle").removeClass("active")
         }
         clearTimeout(scrollTimer);
 
@@ -104,8 +105,14 @@ $(function () {
             const obj = sectionNav_elements[i];
             const elementRect = obj.dom.getBoundingClientRect();
             if (elementRect.top <= 0) {
-                console.log("超出", obj.section);
-                const currentNavItem = $(`.nav-content li[data-id=${obj.section}]`);
+                let currentNavItem = undefined
+                // console.log("超出" + obj.section, currentNavItem)
+                if (obj.section === "introduction") {
+                    const currentIntrIndex = $(".intr-nav li.active a")[0].getAttribute("data-index")
+                    currentNavItem = $(`.nav-content li[data-id=introduction${currentIntrIndex}]`);
+                } else {
+                    currentNavItem = $(`.nav-content li[data-id=${obj.section}]`);
+                }
                 currentNavItem.addClass("active").siblings("li").removeClass("active");
                 break;
             }
@@ -167,9 +174,7 @@ function setSameHeight_gpt(doms) {
     });
 
     for (let i = 0; i < images.length; i++) {
-        console.log(images[i])
         images[i].addEventListener("load", function () {
-            console.log("ok");
             loadedImageCount++;
 
             // 檢查是否所有圖片都已經加載完成
@@ -203,7 +208,7 @@ function setSameHeight_gpt(doms) {
 
 // youtube iframe
 const tag = document.createElement("script");
-let initVideoID = "4m2ga0gN7RU";
+let initVideoID = "znk6FW62Bcc";
 let player;
 
 tag.src = "https://www.youtube.com/iframe_api";

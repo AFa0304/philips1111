@@ -28,7 +28,7 @@ header {
   position: absolute;
   top: 0;
   left: 50%;
-  z-index: 2;
+  z-index: 10;
   background-color: #fff;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -139,7 +139,7 @@ header .nav-toggle.active + .nav-content {
 }
 header .nav-content {
   width: 90%;
-  height: calc(100vh - 240px);
+  min-height: calc(100vh - 240px);
   max-width: 226px;
   display: flex;
   position: absolute;
@@ -228,6 +228,10 @@ header .nav-content .nav-footer {
   flex-flow: column;
   justify-content: center;
   align-items: center;
+  margin-top: 30px;
+}
+header .nav-content .nav-footer a {
+  text-decoration: none;
 }
 header .nav-content .nav-footer p {
   text-align: center;
@@ -240,8 +244,14 @@ header .nav-content .nav-footer p {
   line-height: 1.25;
 }
 
-footer {
-  height: 120px;
+footer .footer-copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 20px;
+}
+footer .footer-copyright span {
+  font-weight: bold;
 }
 
 main .card {
@@ -261,7 +271,7 @@ main .card.fun, main .card.video {
 }
 
 .kv-bg {
-  height: calc(100vh - 200px);
+  height: calc(100vh - 280px);
 }
 .kv-bg img {
   width: 100%;
@@ -285,7 +295,7 @@ main .card.fun, main .card.video {
   position: absolute;
   bottom: 0;
   left: 50%;
-  z-index: 2;
+  z-index: 4;
   transform: translate(-50%, 18%);
   -webkit-transform: translate(-50%, 18%);
   -moz-transform: translate(-50%, 18%);
@@ -326,7 +336,7 @@ main .card.fun, main .card.video {
 .kv-woman .woman-name {
   width: 51.48%;
   position: absolute;
-  right: 0;
+  right: 10%;
   bottom: 9%;
   z-index: 2;
 }
@@ -343,7 +353,7 @@ main .card.fun, main .card.video {
 }
 .card-header h1 {
   color: #353535;
-  font-size: 60px;
+  font-size: 50px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -384,10 +394,56 @@ main .card.fun, main .card.video {
   align-items: stretch;
   gap: 6px;
 }
+.fun .card-content .card-container {
+  width: 100%;
+  position: relative;
+  z-index: 7;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
+.fun .card-content .left-card,
+.fun .card-content .right-card {
+  overflow: hidden;
+}
+.fun .card-content .left-card:hover .card-container,
+.fun .card-content .right-card:hover .card-container {
+  transform: scale(1.04);
+  -webkit-transform: scale(1.04);
+  -moz-transform: scale(1.04);
+  -ms-transform: scale(1.04);
+  -o-transform: scale(1.04);
+}
+@keyframes cardHover {
+  0% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+  }
+  75% {
+    transform: scale(1.07);
+    -webkit-transform: scale(1.07);
+    -moz-transform: scale(1.07);
+    -ms-transform: scale(1.07);
+    -o-transform: scale(1.07);
+  }
+  100% {
+    transform: scale(1.04);
+    -webkit-transform: scale(1.04);
+    -moz-transform: scale(1.04);
+    -ms-transform: scale(1.04);
+    -o-transform: scale(1.04);
+  }
+}
 .fun .card-content .left-card {
-  width: 66.37%;
+  width: 64.37%;
   flex-shrink: 0;
   padding: 0 25px;
+  overflow: hidden;
 }
 .fun .card-content .right-card {
   flex-grow: 1;
@@ -462,13 +518,14 @@ main .card.fun, main .card.video {
      object-fit: contain;
 }
 .fun .card-content .fun-item .fun-images .fun-image h2 {
-  color: #d65f5f;
+  color: #353535;
   font-family: Inter;
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
   margin-top: 16px;
+  text-shadow: 3px 3px 6px #d6d6d6;
 }
 
 .card-instructions-wrapper {
@@ -477,24 +534,17 @@ main .card.fun, main .card.video {
   margin: 20px auto 0;
   padding-bottom: 46px;
 }
-.card-instructions-wrapper::after {
-  width: 100%;
-  height: 2px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  background-color: #353535;
-  content: "";
-}
 .card-instructions-wrapper .card-instructions {
   width: 100%;
-  height: 54px;
+  min-height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #cad2ff;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
   border-radius: 24px;
+  padding: 5px;
+  box-sizing: border-box;
 }
 .card-instructions-wrapper .card-instructions h3 {
   color: #353535;
@@ -522,19 +572,27 @@ main .card.fun, main .card.video {
 }
 
 .fun-title {
-  width: 250px;
+  width: 350px;
+  position: relative;
   margin-left: auto;
+  margin: 0 0 20px auto;
+}
+.fun-title img {
+  position: relative;
+  top: -15%;
+  right: -18%;
 }
 
 .share .card-content {
   position: relative;
   padding: 32px 33px;
-  background: linear-gradient(117deg, rgb(236, 241, 176) -2.19%, #c3c1c2 46.9%, rgb(93, 36, 150) 96.9%);
+  background: linear-gradient(117deg, rgb(187, 193, 116) -2.19%, #c3c1c2 46.9%, rgb(93, 36, 150) 96.9%);
 }
 .share .card-content .fun-title {
   position: absolute;
   top: 0;
   right: 18px;
+  text-align: right;
 }
 .share .share-content {
   display: flex;
@@ -556,10 +614,11 @@ main .card.fun, main .card.video {
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  text-align: center;
+  text-align: left;
   padding-bottom: 16px;
   margin-bottom: 25px;
   border-bottom: 3px solid #ffed4c;
+  text-shadow: 3px 3px 3px #a6a6a4;
 }
 .share .share-content p {
   color: #fff;
@@ -569,10 +628,19 @@ main .card.fun, main .card.video {
   font-weight: 500;
   line-height: normal;
   margin-bottom: 1em;
+  text-shadow: 3px 3px 3px #a6a6a4;
+}
+.share .share-content .winners {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 .share .share-content .reddot-winner {
   width: 140px;
   margin-bottom: 3px;
+}
+.share .share-content .hi-res-winner {
+  width: 60px;
 }
 .share .share-content .share-image-content {
   display: flex;
@@ -588,7 +656,7 @@ main .card.fun, main .card.video {
 }
 .share .share-content .share-image-content .award-tat1235 > div {
   position: relative;
-  top: -50px;
+  top: -25px;
   margin-left: auto;
 }
 .share .share-content .share-image-content .award-fidelio > div,
@@ -754,11 +822,22 @@ main .card.fun, main .card.video {
   left: 50%;
   z-index: 2;
   animation: tvShadow 2s ease-in-out 0s infinite alternate;
-  transform: translate(-50%, -50%) scale(1.15) rotateZ(0);
-  -webkit-transform: translate(-50%, -50%) scale(1.15) rotateZ(0);
-  -moz-transform: translate(-50%, -50%) scale(1.15) rotateZ(0);
-  -ms-transform: translate(-50%, -50%) scale(1.15) rotateZ(0);
-  -o-transform: translate(-50%, -50%) scale(1.15) rotateZ(0);
+  transform: translate(-50%, -50%) scale(1.14) rotateZ(0);
+  -webkit-transform: translate(-50%, -50%) scale(1.14) rotateZ(0);
+  -moz-transform: translate(-50%, -50%) scale(1.14) rotateZ(0);
+  -ms-transform: translate(-50%, -50%) scale(1.14) rotateZ(0);
+  -o-transform: translate(-50%, -50%) scale(1.14) rotateZ(0);
+}
+
+.shop.card .card-content {
+  padding: 32px 33px;
+}
+.shop.card .shop-wrapper h1 {
+  color: #000;
+  text-align: center;
+  font-family: Inter;
+  font-size: 32px;
+  font-weight: 400;
 }
 
 @keyframes tvShadow {
@@ -777,6 +856,92 @@ main .card.fun, main .card.video {
     -o-transform: translate(-50%, -50%) scale(1.2) rotateZ(8deg);
   }
 }
+.card.shops {
+  background-color: rgb(255, 237, 76);
+}
+.card.shops .card-header {
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.card.shops .card-content {
+  padding: 0 20px 20px 20px;
+  background-color: rgb(255, 237, 76);
+}
+.card.shops .card-content .shop-hr {
+  width: 100%;
+  height: 5px;
+  background-color: #353535;
+  margin: 30px 0 10px;
+}
+.card.shops .card-content .shop-types {
+  display: flex;
+  flex-flow: column;
+  gap: 80px;
+  border: 20px solid;
+  background-color: white;
+}
+.card.shops .card-content .shop-types.outer {
+  border-color: rgba(255, 237, 76, 0.75);
+}
+.card.shops .card-content .shop-types.inner {
+  border-color: rgba(255, 242, 121, 0.5);
+  padding: 4.2% 20px 6%;
+}
+.card.shops .card-content .shop-type {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+.card.shops .card-content .shop-tag {
+  min-width: 367px;
+  height: 75px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 97px 90px 90px 90px;
+  border: 5px solid #353535;
+  background: #ffed4c;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset, 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: #353535;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Inter;
+  font-size: 36px;
+  font-weight: 700;
+}
+.card.shops .card-content .shop-list {
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px 25%;
+  margin: 30px 0 0;
+  padding: 50px 5% 0;
+}
+.card.shops .card-content .shop-list::before {
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #353535;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  content: "";
+}
+.card.shops .card-content .shop-list li {
+  max-width: 400px;
+  justify-self: center;
+  align-self: center;
+}
+.card.shops .card-content .shop-list li#carrefour {
+  width: 70%;
+  max-width: 200px;
+}
+.card.shops .card-content .shop-list li#cc {
+  width: 80%;
+  max-width: 220px;
+}
+
 .card.video .card-header {
   height: 90px;
 }
@@ -787,6 +952,7 @@ main .card.fun, main .card.video {
 }
 .card.video .card-header ul li {
   position: relative;
+  text-align: center;
 }
 .card.video .card-header ul li::after {
   width: 0%;
@@ -824,7 +990,7 @@ main .card.fun, main .card.video {
   font-size: 24px;
   font-weight: 700;
   text-decoration: none;
-  text-shadow: 0 0.1em 0.1em transparent;
+  text-shadow: 0 0.1em 0.1em rgba(53, 53, 53, 0.3);
   transition: all 0.4s;
   -webkit-transition: all 0.4s;
   -moz-transition: all 0.4s;
@@ -844,7 +1010,7 @@ main .card.fun, main .card.video {
   z-index: 6;
 }
 .card.video .video-footer {
-  min-height: 270px;
+  min-height: 280px;
   display: flex;
 }
 .card.video .video-footer .vf-wrapper {
@@ -870,8 +1036,21 @@ main .card.fun, main .card.video {
   top: 0;
   left: 0;
   z-index: 2;
-  background: linear-gradient(180deg, #56de34 0%, #51b5fe 100%);
+  background: linear-gradient(-45deg, #f36e6e, #ffed4c, #56de34, #51b5fe, #e046a5);
+  background-size: 400% 400%;
+  animation: video-footer-filter 5s ease 0s infinite;
   mix-blend-mode: multiply;
+}
+@keyframes video-footer-filter {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 .card.video .video-footer .vf-wrapper .vf-content {
   width: calc(50% + 55px);
@@ -921,7 +1100,7 @@ main .card.fun, main .card.video {
 .card.video .video-footer .vf-wrapper .vf-content .vf-description .vf-stars {
   display: flex;
   gap: 5px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .card.video .video-footer .vf-wrapper .vf-content .vf-description h1 {
   color: #353535;
@@ -935,12 +1114,13 @@ main .card.fun, main .card.video {
   font-family: Inter;
   font-size: 22px;
   font-weight: 400;
+  line-height: 1.25;
 }
 .card.video .video-footer .vf-wrapper .vf-content .vf-description .read-more {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  margin-top: 30px;
+  margin-top: 25px;
 }
 .card.video .video-footer .vf-wrapper .vf-content .vf-description .read-more a {
   display: flex;
@@ -1046,6 +1226,11 @@ main .card.fun, main .card.video {
   width: 25px;
   background-color: #f5f5f5;
 }
+@media screen and (max-width: 991px) {
+  .card.introduction .card-content .intr-content-wrapper .intr-content .intr-inner::-webkit-scrollbar {
+    width: 10px;
+  }
+}
 .card.introduction .card-content .intr-content-wrapper .intr-content .intr-inner::-webkit-scrollbar-thumb {
   border-radius: 15px;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
@@ -1054,7 +1239,7 @@ main .card.fun, main .card.video {
 .card.introduction .card-content .intr-content-wrapper .intr-content .intr-inner h1 {
   font-size: 32px;
   font-weight: bold;
-  margin-bottom: 0.1em;
+  margin-bottom: 0.15em;
 }
 .card.introduction .card-content .intr-content-wrapper .intr-content .intr-inner .number-list {
   margin-bottom: 1em;
@@ -1068,6 +1253,89 @@ main .card.fun, main .card.video {
   list-style-position: inside;
   padding-left: 1em;
   text-indent: -1.15em;
+}
+
+.circle-list {
+  list-style: disc;
+  list-style-position: inside;
+  padding-left: 2em;
+  text-indent: -1.4em;
+}
+
+.qr-codes {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+.qr-codes .qr-code {
+  width: 258px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.qr-codes .qr-code a {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+.qr-codes .qr-code span {
+  color: #000;
+  text-align: center;
+  font-family: Inter;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.step-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px 30px;
+}
+.step-list > div {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.step-list > div div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+.step-list img {
+  max-width: 300px;
+}
+.step-list .qrcode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.step-list .qrcode a {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  text-align: center;
+  text-shadow: none;
+  gap: 10px;
+}
+.step-list .qrcode img {
+  width: 250px;
+  margin: 0 auto;
+}
+.step-list span {
+  display: inline-block;
+  font-size: 30px;
+  color: #353535;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .pc {
@@ -1084,6 +1352,11 @@ main .card.fun, main .card.video {
     margin: 0 auto;
   }
 }
+@media screen and (max-width: 1920px) {
+  .card.shops .card-content .shop-list {
+    gap: 80px 18%;
+  }
+}
 @media screen and (max-width: 1024px) {
   .pc {
     display: none !important;
@@ -1096,7 +1369,7 @@ main .card.fun, main .card.video {
     max-width: 200px;
   }
   main {
-    padding: 0;
+    padding: 0 0 10px;
   }
   .mobile-padding {
     padding: 25px;
@@ -1110,7 +1383,7 @@ main .card.fun, main .card.video {
   }
   .kv-woman .woman-name {
     width: 73.58%;
-    left: 50%;
+    left: 35%;
     transform: translate(-50%, 0);
     -webkit-transform: translate(-50%, 0);
     -moz-transform: translate(-50%, 0);
@@ -1151,7 +1424,7 @@ main .card.fun, main .card.video {
     z-index: 7;
   }
   .fun .card-content .fun-item.mobile .fun-content h1 {
-    font-size: 20px;
+    font-size: 22px;
   }
   .fun .card-content .fun-item.mobile .fun-images {
     width: 90%;
@@ -1164,9 +1437,14 @@ main .card.fun, main .card.video {
     margin-top: 15px;
   }
   .card .card-content .fun-title {
-    width: 200px;
+    width: 250px;
     justify-content: flex-start;
     margin: 0;
+    padding: 0;
+  }
+  .card .card-content .fun-title img {
+    top: 0;
+    left: -15%;
   }
   .card-instructions-wrapper {
     padding-bottom: 20px;
@@ -1177,7 +1455,7 @@ main .card.fun, main .card.video {
     margin-right: auto;
   }
   .card-instructions-wrapper .card-instructions h3 {
-    font-size: 20px;
+    font-size: 18px;
   }
   .card-description {
     margin-top: 20px;
@@ -1217,6 +1495,7 @@ main .card.fun, main .card.video {
     text-align: right;
   }
   .share .share-content h2 {
+    width: 95%;
     font-size: 20px;
     padding-bottom: 7px;
     margin-bottom: 13px;
@@ -1237,7 +1516,9 @@ main .card.fun, main .card.video {
     left: -30px;
   }
   .share .share-content .share-row .share-text-content {
+    width: 60%;
     flex-grow: 1;
+    flex-shrink: 0;
   }
   .share .share-content .share-row .share-text-content.right {
     display: flex;
@@ -1304,7 +1585,6 @@ main .card.fun, main .card.video {
   .card.video .card-header {
     width: 100%;
     height: 60px;
-    justify-content: flex-start;
     overflow-x: auto;
     padding: 0 9px;
     box-sizing: border-box;
@@ -1312,19 +1592,43 @@ main .card.fun, main .card.video {
   .card.video .card-header ul {
     gap: 15px;
   }
+  .card.video .card-header ul li::after {
+    bottom: -5px;
+  }
   .card.video .card-header ul a {
     font-size: 15px;
     white-space: nowrap;
     text-shadow: 1px 1px 5px #353535;
   }
+  .card.introduction {
+    height: auto;
+    max-height: none;
+  }
+  .card.introduction .card-content {
+    flex-flow: column;
+  }
+  .card.introduction .card-content .intr-content-wrapper {
+    padding: 23px 10px;
+  }
   .card.introduction .card-content .intr-nav {
+    width: 100%;
     min-width: 115px;
+    padding: 0;
+  }
+  .card.introduction .card-content .intr-nav ul {
+    width: 100%;
+    flex-flow: row;
   }
   .card.introduction .card-content .intr-nav ul li {
     min-width: 110px;
+    height: 50px;
   }
   .card.introduction .card-content .intr-nav ul li a {
     font-size: 16px;
+  }
+  .card.introduction .card-content .intr-nav ul li.active {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
   }
   .card.introduction .card-content .intr-nav ul li.active a {
     font-size: 20px;
@@ -1334,9 +1638,146 @@ main .card.fun, main .card.video {
     background-color: transparent;
   }
   .card.introduction .card-content .intr-content-wrapper .intr-content .intr-inner {
-    font-size: 20px;
+    font-size: 16px;
   }
   .card.introduction .card-content .intr-content-wrapper .intr-content .intr-inner h1 {
+    font-size: 18px;
+  }
+  .card.video .video-footer {
+    width: 100%;
+    min-height: 0;
+    position: relative;
+    padding-bottom: min(36.5%, 200px);
+  }
+  .card.video .video-footer .vf-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .card.video .video-footer .vf-wrapper .vf-content {
+    width: 90.5%;
+    right: 0;
+    gap: 10px;
+  }
+  .card.video .video-footer .vf-wrapper .vf-content .vf-name {
+    width: 80px;
+    height: 80px;
+    margin-left: 18px;
+  }
+  .card.video .video-footer .vf-wrapper .vf-content .vf-name h1 {
+    font-size: 24px;
+  }
+  .card.video .video-footer .vf-wrapper .vf-content .vf-description h1 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  .card.video .video-footer .vf-wrapper .vf-content .vf-description h2 {
+    font-size: 13px;
+  }
+  .card.video .video-footer .vf-wrapper .vf-content .vf-description .read-more {
+    margin-top: 2px;
+  }
+  .card.video .video-footer .vf-wrapper .vf-content .vf-description .read-more a {
+    font-size: 12px;
+  }
+  .card.video .video-footer .vf-wrapper .vf-content .vf-description .vf-stars {
+    margin-bottom: 7px;
+  }
+  .card.video .video-footer .vf-wrapper .vf-content .vf-description .vf-stars li {
+    width: 20px;
+  }
+  .qr-codes .qr-code span {
     font-size: 20px;
+  }
+  .step-list {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .step-list span:nth-child(2) {
+    grid-row-start: 3;
+  }
+  .step-list span:nth-child(5) {
+    grid-row-start: 5;
+  }
+  .step-list span:nth-child(6) {
+    grid-row-start: 7;
+  }
+  .step-list span {
+    margin-top: 30px;
+    font-size: 20px;
+  }
+  .qr-codes {
+    justify-content: center;
+  }
+  .qr-codes .qr-code {
+    width: 150px;
+  }
+  .qr-codes .qr-code span {
+    font-size: 16px;
+  }
+  .card.shops .card-header {
+    height: auto;
+    padding: 20px;
+  }
+  .card.shops .card-content .shop-types {
+    gap: 30px;
+  }
+  .card.shops .card-content .shop-tag {
+    min-width: 0;
+    height: auto;
+    font-size: 26px;
+    padding: 6px 25px;
+    white-space: nowrap;
+    border-width: 3px;
+  }
+  .card.shops .card-content .shop-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 15%;
+    margin: 20px 0;
+    padding-top: 30px;
+  }
+  .card.shops .card-content .shop-list::before {
+    height: 2px;
+  }
+  .card.shops .card-content .shop-list li {
+    max-width: 220px;
+  }
+  .card.shops .card-content .shop-list li#carrefour {
+    max-width: 140px;
+  }
+  .card.shops .card-content .shop-list li#cc {
+    max-width: 160px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .card-header h1 {
+    font-size: min(5.5vw, 25px);
+  }
+  .card .card-content .fun-title {
+    width: max(30%, 180px);
+  }
+  .card .card-content .fun-title img {
+    top: 0;
+    left: -15%;
+  }
+  .card.video .video-footer {
+    padding-bottom: min(36.5%, 140px);
+  }
+  .card.shops .card-content .shop-type {
+    padding: 0;
+  }
+  .card.shops .card-content .shop-list {
+    gap: 20px 30px;
+  }
+  .card.shops .card-content .shop-list li {
+    max-width: 150px;
+  }
+  .card.shops .card-content .shop-list li#carrefour {
+    max-width: 120px;
+  }
+  .card.shops .card-content .shop-list li#cc {
+    max-width: 120px;
   }
 }
